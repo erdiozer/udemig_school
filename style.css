@@ -1,0 +1,324 @@
+
+/* default gelen özellikleri sıfırla */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.align-col{
+    /* background-color: antiquewhite; */
+    flex-basis: 30%;               /* herbirine %30 ver kalanı aralara dağıt */
+    margin-bottom: 5%;
+    box-sizing: border-box;        /* kutu boyutunu biz yönetelim kendisi ayarlamasın */
+    border-radius: 5px;
+}
+
+.align-box{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* header */
+header{
+     background: linear-gradient(rgba(5,10,30,0.7), rgba(5,10,30,0.7)), url(images/bg.webp);
+     min-height: 100vh;              /* ekran açılış yüksekliği kadar */
+     background-size: cover;         /* arka plan ekranı kaplasın */
+     background-position: center;    /* arka planı ortala */
+
+     position: relative;             /* arka planı sabitle */
+}
+
+nav{
+    /* background-color: antiquewhite; */
+    padding: 20px 60px;
+    display: flex;                      /* child ları yan yana diz */
+    justify-content: space-between;     /* elemanları yatay hizala (eşit aralıklı) */
+    align-items: center;                /* elemanları dikey hizala (ortala) */
+    
+}
+
+nav a img {
+    width: 150px;              
+}
+
+.nav-links {
+    /* background-color: aqua; */
+    flex: 1;                            /* diğer elemanlar boyutu kadar yer kaplasın, kalan alanı bu elemana ver */
+}
+
+.nav-links ul li {
+    list-style-type: none;              /* liste elemanlarının işaretlerini kaldır */
+    display: inline-block;              /* her li eleamnı olduğu kadar yer kaplasın, diğari de yer varsa yanına gelsin */    
+    padding: 8px 12px;
+    float: right;
+    position: relative;                 /* altına çizgi eklemek için relative yap */
+}
+
+
+.nav-links ul li a {
+    text-decoration: none;              /* alttaki çizgiyi kaldır */
+    font-size:  20px;
+    color: white;
+}
+
+.nav-links ul li a::after {        /* after: itemden sonra birşey ekle */
+    content: '';
+    background-color: red;
+    display: block;                /* kendisinden önceki elemanın altına gelir veya kendisinden sonra eleman varsa onu alta getirir */
+    margin: auto;                  /* ortala */
+    width: 50%;
+    height: 2px;
+    margin-top: 4px;
+    transition: 500ms;
+    visibility: hidden;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+    visibility: visible;
+}
+
+.bi-list {
+    color: white;
+    font-size: 30px;
+    display: none;
+}
+
+.bi-list:hover {
+    font-size: 35px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+ /* Yazi Kutusu */
+ .text-box {
+    background-color: transparent;
+    width: 90%;
+    color: white;
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+ }
+
+ .text-box h1 {
+    font-size: 60px;
+ }
+
+ .text-box p {
+    margin: 10px 0px;
+    font-size: 15px;
+ }
+
+ .hero-btn {
+    text-decoration: none;                  /* alttaki çizgiyi kaldır */
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 30px;
+    display: inline-block;                   /* satırici ortala */
+    border-radius: 5px;
+    /* font-size: 20px; */
+ }
+
+ .hero-btn:hover {
+    border-color: red;
+    background-color: red;
+    transition: .3s;
+    scale: 95%;                              
+ }
+
+
+/* kurslar */
+.row {
+    margin-top: 5%;
+    justify-content: space-between;           /* yatayda eşit aralıklı ortala */
+    display: flex;                            /* yan yana diz */
+ }
+
+ .course-col{
+    background-color: antiquewhite;
+    padding: 20px 10px;
+ }
+
+ .course-col:hover {
+    box-shadow: 0 0 10px gray;
+    transition: .3s;
+ }
+
+ section h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+ }
+
+ h3 {
+    margin: 10px 0;
+ }
+
+ section .row div p {
+    color: #777;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;                        /* satır uzaklığı */
+    padding: 10px;
+ }
+
+
+/* campus */
+.campus-col {
+    position: relative;
+    overflow: hidden;                         /* taşma olursa gizle */
+    background-color: aqua;
+}
+
+.campus-col img {
+    width: 100%;
+    display: block;
+}
+
+.layer {
+    /* background-color: antiquewhite; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+}
+
+.layer h3 {
+    /* background-color: red; */
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: .3s;
+    opacity: 0;         /* görünürlüğünü gizle */
+}
+
+.layer:hover {
+    background-color: rgba(200,52,15,0.5);
+}
+
+.layer:hover h3 {   /* layerın üstüne mouse geldiğinde h3 de değişiklik yap */
+    bottom: 50%;
+    opacity: 1;         /* görünür yap */
+}
+
+
+/* birimler */
+.facilities-col {
+    text-align: left;
+}
+
+.facilities-col img {
+    width: 100%;        /* içinde bulunduğu elemanın genişliğini kapla */
+}
+
+
+/* yorumlar */
+.testemonials-col {
+    background-color: antiquewhite;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+}
+
+.testemonials-col img {
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-radius: 50%;         /* yuvarlak yap */
+}
+
+.testemonials-col div p {
+    padding: 0;
+}
+
+.testemonials-col h3 {
+    margin-top: 15px;
+}
+
+.testemonials-col div .bi {
+    color: rgb(230, 196, 4);
+}
+
+
+
+/*hizli ulasim*/
+.ua {
+    background: linear-gradient(rgba(5,10,30,0.7), rgba(5,10,30,0.7)), url(images/london.jpeg);
+    background-size: cover;         /* arka plan ekranı kaplasın */
+    background-position: center;    /* arka planı ortala */
+    padding: 100px 0;
+    color: white;
+    margin: 40px auto;
+    border-radius: 5px;
+}
+
+.ua h1 {
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+
+
+/* footer*/
+footer {
+    margin-top: 0;
+    padding: 30px 0; 
+}
+
+footer h1 {
+    margin: 0 0 25px 0;
+}
+
+.icons{
+    margin: 10px;
+}
+
+footer .icons .bi {
+    color: red;
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.bi-heart-fill {
+    color: red;
+}
+
+
+/* responsive */
+@media (max-width:768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .bi-list {
+        display: block;
+    }
+
+    .text-box h1 {
+        font-size: 30px;
+    }
+
+    .row{
+        display: block;                       /* alt alta diz */
+    }
+
+    .ua h1 {
+        font-size: 25px;
+    }
+}
